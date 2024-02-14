@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :log_impression, :only=> [:show]
 
   # GET /products
   def index
@@ -42,9 +43,15 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   def destroy
     @product.destroy!
-    redirect_to products_url, notice: "Product was successfully destroyed.", status: :see_other
+    redirect_to products_url, notice: "Product was successfully destroyed.", status: :see_other, fresh: "yes"
   end
 
+  def log_impression
+    @product = Product.find(params[:id])    
+    # this assumes you have a current_user method in your authentication system
+    @product.impressions.create(request_id: request.request_id)
+
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
