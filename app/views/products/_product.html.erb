@@ -13,5 +13,9 @@
     <%= product.unique_impression_count %>
     </span>
   </div>
+  <div class="badge bg-success text-dark" style="margin: 5px">
+    <%# QUESTION: Is there a better way to default value? aside from html.erb?in model perhaps? if so, how? %>
+    <%= product.category.nil? ? "Uncategorized" : product.category.name %>
+  </div>
 
 </div>

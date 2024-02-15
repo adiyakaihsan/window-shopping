@@ -46,12 +46,20 @@ class ProductsController < ApplicationController
     redirect_to products_url, notice: "Product was successfully destroyed.", status: :see_other, fresh: "yes"
   end
 
+  # count Views (impression on visit)
   def log_impression
     @product = Product.find(params[:id])    
     # this assumes you have a current_user method in your authentication system
     @product.impressions.create(request_id: request.request_id)
 
   end
+
+  # QUESTION: is it correct to associate Products with other table (Categories) in controller like below?
+  # associate categories
+  def link_categories
+    @product = Product.where(category_id: category_id).includes(:categories)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -60,6 +68,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:title, :body, :image)
+      params.require(:product).permit(:title, :body, :image, :category_id)
     end
 end

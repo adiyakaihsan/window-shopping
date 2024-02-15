@@ -6,6 +6,10 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :body %>
+    <div>
+      <%= f.label :category %>
+      <%= f.select :category_id, options_for_select(Category.all.map { |category| [category.name, category.id]})%>
+    </div>
     <%= f.file_field :image %>
   </div>
 
