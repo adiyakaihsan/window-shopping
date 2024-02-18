@@ -2,6 +2,7 @@ class Product < ApplicationRecord
     belongs_to :category
     has_one_attached :image
     validates :image, :presence => true
+    validates :category, :presence=> true
     has_many :impressions, :as=>:impressionable
 
     def impression_count

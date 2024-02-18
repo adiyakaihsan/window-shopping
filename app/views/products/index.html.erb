@@ -1,6 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Products</h1>
+<div class="jumbotron jumbotron-fluid rounded border border-dark bg-light" style="margin-bottom: 5px">
+  <div class="container-fluid" style="padding: 0px">
+    <ul class="nav nav-pills nav-fill">
+            <li class="nav-item"><%= active_link_to "All", products_path(category: nil), class: "nav-link" %></li>
+        <% @category_all.each do |cat| %>
+            <li class="nav-item"><%= active_link_to cat.name, products_path(category: cat.id), class: "nav-link" %></li>
+        <% end %>
+    </ul>
+  </div>
+</div>
 
 <div id="products" class="mx-auto">
 <% @products.in_groups_of(4, false).each do |group| %>

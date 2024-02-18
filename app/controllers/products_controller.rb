@@ -4,7 +4,13 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
+    @category_all = Category.all
+    if (params[:category] && products = Product.where(category_id: params[:category]))
+      @products = products
+      @category = Category.where(id: params[:category])
+    else
+      @products = Product.all
+    end
   end
 
   # GET /products/1
@@ -43,7 +49,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   def destroy
     @product.destroy!
-    redirect_to products_url, notice: "Product was successfully destroyed.", status: :see_other, fresh: "yes"
+    redirect_to products_url, notice: "Product was successfully destroyed.", status: :see_other
   end
 
   # count Views (impression on visit)
