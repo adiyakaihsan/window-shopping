@@ -14,4 +14,12 @@ class Product < ApplicationRecord
         # so getting keys from the hash and calculating the number of keys
         impressions.group(:request_id).size.keys.length #TESTED
     end
+
+    def self.search(keywords)
+        if keywords
+            where("title LIKE ? OR body like?", "%#{keywords}%", "%#{keywords}%").order('id DESC')
+        else
+            order("id DESC")
+        end
+    end
 end

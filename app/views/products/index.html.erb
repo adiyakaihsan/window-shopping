@@ -4,6 +4,16 @@
 
 <div id="products" class="mx-auto">
 
+<%= form_tag(products_path, method: :get) do %>
+<div class="input-group" style="margin-bottom: 5px">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="">Product Title: </span>
+  </div>
+  <%= text_field_tag :keywords, params[:keywords], class: "form-control" %>
+  <%= submit_tag 'Search', name: nil, class: "btn btn-outline-secondary" %>
+</div>
+<% end %>
+
 <div class="jumbotron jumbotron-fluid rounded border border-dark bg-light" style="margin-bottom: 5px">
   <div class="container-fluid" style="padding: 0px">
     <ul class="nav nav-pills nav-fill">

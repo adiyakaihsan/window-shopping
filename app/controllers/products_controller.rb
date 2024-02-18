@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+      @products = @products.search(params[:keywords]).paginate(:page => params[:page], :per_page => 9).order('created_at DESC') 
   end
 
   # GET /products/1
