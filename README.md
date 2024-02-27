@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a learning project for Rails.
 
-Things you may want to cover:
+Goals:
+1. Can code simple web app
+2. Setup Infra in Cloud
+3. Setup CI/CD
+3. Improve Coding skill by implementing best practice.  
+(refactor the initial codes)
 
-* Ruby version
+To Do list:
 
-* System dependencies
+* template layouts so it can be reused by products and categories  
+        - show  
+        - index  
+        - forms  
 
-* Configuration
+* Implement user login for admin
 
-* Database creation
+* Only user admin can create and delete products and categories.
 
-* Database initialization
+=== by this point then we can try to host this code in cloud ===
 
-* How to run the test suite
+* Implement like button.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* etc.
