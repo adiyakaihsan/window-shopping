@@ -17,7 +17,7 @@ class Product < ApplicationRecord
 
     def self.search(keywords)
         if keywords
-            where("title LIKE ? OR body like?", "%#{keywords}%", "%#{keywords}%").order('id DESC')
+            where("LOWER(title) LIKE ? OR LOWER(body) like?", "%#{keywords.downcase}%", "%#{keywords.downcase}%").order('id DESC')
         else
             order("id DESC")
         end
