@@ -1,5 +1,13 @@
 # README
 
+to setup need to set Env variables below:  
+
+DATABASE_NAME  
+DATABASE_PASSWORD  
+DATABASE_HOSTNAME  
+(for production) SECRET_KEY_BASE  
+
+
 This is a learning project for Rails.
 
 Goals:
@@ -16,9 +24,11 @@ To Do list:
         - index  
         - forms  
 
-* Implement user login for admin
+* ~~Implement user login for admin~~
 
-* Only user admin can create and delete products and categories.
+* categories should show products in its categories
+
+* ~~Only user admin can create and delete products and categories.~~
 
 === by this point then we can try to host this code in cloud ===
 

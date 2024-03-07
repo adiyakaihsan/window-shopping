@@ -1,0 +1,22 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+  <div class="card text-bg-light mb-2 " style="width: 40rem;height: 13rem;padding: 10px">
+    <%= form_with model: @user, url: sign_up_path do |form| %>
+      <%= render partial: "shared/form_errors", locals: { object: form.object } %>
+      <div class="input-group input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm" style="width: 200px">Email</span>
+        <%= form.email_field :email, required: true, class: "form-control" %>
+      </div>
+      <div class="input-group input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm" style="width: 200px">Password</span>
+        <%= form.password_field :password, required: true, class: "form-control" %>
+      </div>
+      <div class="input-group input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm" style="width: 200px">Password Confirmation</span>
+        <%= form.password_field :password_confirmation, required: true, class: "form-control" %>
+      </div>
+      <div class="position-absolute bottom-0 end-0" style="margin: 10px">
+        <%= form.submit "Sign Up", class: "btn btn-primary btn-sm" %>
+      </div>
+    <% end %>
+  </div>
+</div>

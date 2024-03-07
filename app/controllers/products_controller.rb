@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
   before_action :log_impression, :only=> [:show]
+  before_action :authenticate_user!, only: %i[create edit update destroy log_impression]
 
   # GET /products
   def index
