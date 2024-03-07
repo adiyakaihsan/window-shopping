@@ -17,4 +17,6 @@
   </div>
 <% end %>
 
-<%= link_to "New category", new_category_path %>
+<% if current_user %>
+  <%= link_to "New category", new_category_path %>
+<% end %>

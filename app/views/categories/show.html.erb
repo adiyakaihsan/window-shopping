@@ -4,6 +4,7 @@
 <div class="card text-bg-light mb-2" style="width: 25rem;padding: 10px">
   <div class="card-body">
     <%= render @category %>
+    <% if current_user %>
     <div class="row" style="margin: 10px">
       <div class="col">
         <%= link_to "Edit this product", edit_category_path(@category), class: "btn btn-primary" %>
@@ -12,6 +13,7 @@
         <%= button_to "Destroy this product", @category, method: :delete %>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
 
