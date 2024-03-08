@@ -4,11 +4,11 @@
   <div class="row">
     <% group.each do |category| %>
       <div class="col-md-3" style="margin-bottom: 10px">
-        <div class="card w-50 h-100 text-bg-light mb-2" style="width: 25rem;padding: 10px">
+        <div class="card w-100 h-100 text-bg-light mb-2" style="width: 25rem;padding: 10px">
           <div class="card-body">
             <%= render category %>
             <p>
-              <%= link_to "Show this category", category, class: "btn btn-primary" %>
+              <%= link_to "Show this category", category, class: "btn btn-primary btn-sm" %>
             </p>
           </div>
         </div>
