@@ -27,7 +27,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # To flash alert from controller to View
-gem 'twitter-bootstrap-rails'
+# gem 'twitter-bootstrap-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
